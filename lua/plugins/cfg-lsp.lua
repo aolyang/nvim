@@ -3,7 +3,7 @@ require("mason").setup({
         icons = {
             package_installed = "√",
             package_pending = "→",
-            package_unstalled = "×"
+            package_unstalled = "U+0078"
         }
     }
 })
@@ -21,7 +21,7 @@ require("lspconfig").lua_ls.setup({
     settings = {
         Lua = {
             diagnostics = {
-                globals = { "vim" }
+                globals = {"vim"}
             }
         }
     }

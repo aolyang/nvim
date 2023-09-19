@@ -27,19 +27,19 @@ return require('packer').startup(function(use)
     "ellisonleao/gruvbox.nvim",
     requires = { "rktjmp/lush.nvim" }
   }
-  
+
   -- 状态栏
   use {
     "nvim-lualine/lualine.nvim",
     requires = { "nvim-tree/nvim-web-devicons" } -- 图标
   }
-  
+
   -- 侧边树
   use {
     "nvim-tree/nvim-tree.lua",
     requires = { "nvim-tree/nvim-web-devicons" }
   }
-  
+
   -- 终端拆分导航，base tmux
   -- Ctrl-h ⬅️     Ctrl-j ⬇️    Ctrl-k ⬆️   Ctrl-l ➡️    Ctrl-\ 回到上一个
   use "christoomey/vim-tmux-navigator"
@@ -76,6 +76,11 @@ return require('packer').startup(function(use)
   }
 
   use "github/copilot.vim"
+
+  use "folke/which-key.nvim" -- 快捷键提示
+
+  -- 快捷键移动块
+  use "matze/vim-move"
   ---
   if packer_bootstrap then
     require('packer').sync()

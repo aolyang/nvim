@@ -17,4 +17,5 @@
 -- <Plug>(copilot-suggest) is disabled.
 
 vim.g.copilot_no_tab_map = true
-require("copilot").setup({})
+-- setup github copilot
+
