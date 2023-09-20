@@ -28,6 +28,8 @@ return require('packer').startup(function(use)
     requires = { "rktjmp/lush.nvim" }
   }
 
+  use "mhinz/vim-startify"
+
   -- 状态栏
   use {
     "nvim-lualine/lualine.nvim",

@@ -1,6 +1,11 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- center startify
+-- vim.g.startify_centered_header = 1
+-- vim.g.startify_centered_footer = 1
+-- vim.g.startify_centered = 1
+
 local opt = vim.opt
 
 -- 行号
