@@ -1,8 +1,8 @@
 local M = {
-    require("./base46"),
-    require("./ui"),
-    require("./nvterm"),
-    require("./nvim-colorizer"),
+    require("plugins.nvchad.b01-base46"),
+    require("plugins.nvchad.n00-nvim-colorizer"),
+    require("plugins.nvchad.n01-nvterm"),
+    require("plugins.nvchad.u00-ui")
 }
 
 return M
