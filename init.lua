@@ -1,16 +1,17 @@
-require("options")
-require("keymaps")
+local vim = require("vim")
 
-require("plugins.setup")
-require("plugins.cfg-lualine")
-require("plugins.cfg-nvim-tree")
-require("plugins.cfg-treesitter")
-require("plugins.cfg-lsp")
-require("plugins.cfg-cmp")
-require("plugins.cfg-comments")
-require("plugins.cfg-autopairs")
-require("plugins.cfg-bufferline")
-require("plugins.cfg-gitsigns")
-require("plugins.cfg-telescope")
-require("plugins.cfg-which-key")
-require("plugins.cfg-github-copilot")
+require("vim-options")
+-- require("core")
+
+require("core.utils").load_mappings()
+
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+    require("core.bootstrap").lazy(lazypath)
+end
+
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"
