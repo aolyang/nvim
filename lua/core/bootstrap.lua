@@ -11,11 +11,11 @@ M.prepare_base46 = function()
 
         local repo = "https://github.com/NvChad/base46"
         utils.shell_call { "git", "clone", "--depth", "1", "-b", "v2.0", repo, cache_path }
-        vim.opt.rtp:prepend(cache_path)
 
         require("base46").compile()
-        dofile(vim.g.base46_cache .. "defaults")
     end
+    vim.opt.rtp:prepend(cache_path)
+    dofile(vim.g.base46_cache .. "defaults")
 end
 
 M.setup_lazy = function()
@@ -25,9 +25,9 @@ M.setup_lazy = function()
 
         local repo = "https://github.com/folke/lazy.nvim.git"
         utils.shell_call({ "git", "clone", "--filter=blob:none", "--branch=stable", repo, cache_path })
-        vim.opt.rtp:prepend(cache_path)
         M.setup_plugins()
     end
+    vim.opt.rtp:prepend(cache_path)
 end
 
 M.setup_plugins = function()

@@ -6,10 +6,9 @@ M.echo = function(str)
 end
 
 M.shell_call = function(args)
-    local output = fn.system(args)
+    local output = vim.fn.system(args)
     assert(vim.v.shell_error == 0, "External call failed with error code: " .. vim.v.shell_error .. "\n" .. output)
 end
-
 
 M.load_config = function()
     return require("core.user-options")

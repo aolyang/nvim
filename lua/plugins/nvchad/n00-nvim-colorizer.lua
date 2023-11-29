@@ -1,7 +1,7 @@
 local M = {
     "NvChad/nvim-colorizer.lua",
     init = function()
-        require("core.utils").lazy_load "nvim-colorizer.lua"
+        require("core.utils").lazy_load("nvim-colorizer.lua")
     end,
     config = function(_, opts)
         require("colorizer").setup(opts)
