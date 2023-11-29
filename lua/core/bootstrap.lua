@@ -13,7 +13,7 @@ end
 
 M.lazy = function(install_path)
     ------------- base46 ---------------
-    local lazy_path = fn.stdpath "data" .. "/lazy/base46"
+    local lazy_path = fn.stdpath("data") .. "/lazy/base46"
 
     M.echo("  Compiling base46 theme to bytecode ...")
 
