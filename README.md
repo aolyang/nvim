@@ -11,12 +11,12 @@ some install:
 
 + move in screen
 
-`Ctrl-y` Moves screen up one line
-`Ctrl-e` Moves screen down one line
-`Ctrl-u` Moves cursor & screen up ½ page
-`Ctrl-d` Moves cursor & screen down ½ page
-`Ctrl-b` Moves screen up one page, cursor to last line
-`Ctrl-f` Moves screen down one page, cursor to first line
+`Ctrl-y` Moves screen up one line  
+`Ctrl-e` Moves screen down one line  
+`Ctrl-u` Moves cursor & screen up ½ page  
+`Ctrl-d` Moves cursor & screen down ½ page  
+`Ctrl-b` Moves screen up one page, cursor to last line  
+`Ctrl-f` Moves screen down one page, cursor to first line  
 
 + move cursor line in  screen
 
