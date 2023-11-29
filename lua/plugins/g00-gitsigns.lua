@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local M = {
     "lewis6991/gitsigns.nvim",
     ft = { "gitcommit", "diff" },

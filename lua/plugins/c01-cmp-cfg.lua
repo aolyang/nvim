@@ -1,5 +1,4 @@
 local cmp = require("cmp")
-local vim = require("vim")
 
 dofile(vim.g.base46_cache .. "cmp")
 

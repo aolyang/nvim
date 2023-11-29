@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local M = {
     "lukas-reineke/indent-blankline.nvim",
     version = "2.20.7",

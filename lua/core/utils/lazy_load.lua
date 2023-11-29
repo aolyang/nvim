@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 return function(plugin)
     vim.api.nvim_create_autocmd({ "BufRead", "BufWinEnter", "BufNewFile" }, {
         group = vim.api.nvim_create_augroup("BeLazyOnFileOpen" .. plugin, {}),

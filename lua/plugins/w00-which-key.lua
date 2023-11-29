@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local M = {
     "folke/which-key.nvim",
     keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "v", "g" },

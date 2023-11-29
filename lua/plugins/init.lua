@@ -14,9 +14,12 @@ local plugins = {
     require("plugins.w00-which-key")
 }
 
+local nvchad_plugins = require("plugins.nvchad")
+
+print("plugins is nil", nvchad_plugins == nil)
 table_insert(
     plugins,
-    table.unpack(require("plugins.nvchad"))
+    table.unpack(nvchad_plugins)
 )
 
 require("plugins.l00-lazy-nvim").setup(plugins)

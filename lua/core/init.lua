@@ -1,2 +1,3 @@
-require("./options")
-require("./envs")
+require("core.pollyfill")
+require("core.options")
+require("core.envs")

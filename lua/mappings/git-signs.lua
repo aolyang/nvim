@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local M = {
     plugin = true,
 

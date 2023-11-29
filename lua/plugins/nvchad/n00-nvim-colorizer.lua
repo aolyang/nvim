@@ -1,4 +1,3 @@
-local vim = require("vim")
 local M = {
     "NvChad/nvim-colorizer.lua",
     init = function()

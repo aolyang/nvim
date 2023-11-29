@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local M = {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },

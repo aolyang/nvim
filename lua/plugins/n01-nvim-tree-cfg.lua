@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local options = {
     filters = {
         dotfiles = false,

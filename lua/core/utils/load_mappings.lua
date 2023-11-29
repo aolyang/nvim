@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local merge_tb = vim.tbl_deep_extend
 
 return function(section, mapping_opt)
@@ -28,7 +26,9 @@ return function(section, mapping_opt)
         local mappings = require("mappings")
 
         if type(section) == "string" then
-            mappings[section]["plugin"] = nil
+            if mappings[section] then
+                mappings[section]["plugin"] = nil
+            end
             mappings = { mappings[section] }
         end
 

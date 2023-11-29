@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local M = {
     "nvim-treesitter/nvim-treesitter",
     init = function()

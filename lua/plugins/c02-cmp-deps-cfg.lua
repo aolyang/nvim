@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local M = {}
 M.luasnip = function(opts)
     require("luasnip").config.set_config(opts)

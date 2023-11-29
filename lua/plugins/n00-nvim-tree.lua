@@ -1,5 +1,3 @@
-local vim = require("vim")
-
 local M = {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
