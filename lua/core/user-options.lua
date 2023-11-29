@@ -82,7 +82,8 @@ M.ui = {
         },
     },
 }
+M.plugins = ""
 
-M.mappings = require("mappings")
+M.mappings = require("core.mappings")
 
 return M

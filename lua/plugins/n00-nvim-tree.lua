@@ -2,6 +2,7 @@ local M = {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     init = function()
+        print("nvim tree init???")
         require("core.utils").load_mappings("nvimtree")
     end,
     opts = function()

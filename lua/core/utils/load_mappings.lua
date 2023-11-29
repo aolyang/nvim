@@ -23,8 +23,9 @@ return function(section, mapping_opt)
             end
         end
 
-        local mappings = require("mappings")
+        local mappings = require("core.mappings")
 
+        print("section", section)
         if type(section) == "string" then
             if mappings[section] then
                 mappings[section]["plugin"] = nil
