@@ -7,7 +7,7 @@ local M = {
         require("core.utils").load_mappings("nvimtree")
     end,
     opts = function()
-        return require "plugins.configs.nvimtree"
+        return require("plugins.n01-nvim-tree-cfg")
     end,
     config = function(_, opts)
         dofile(vim.g.base46_cache .. "nvimtree")

@@ -5,7 +5,7 @@ local plugins = {
     require("plugins.c00-cmp"),
     require("plugins.g00-gitsigns"),
     require("plugins.i00-indent-blankline"),
-    require("plugins.l00-lsp"),
+    require("plugins.l10-lsp"),
     require("plugins.m00-mason"),
     require("plugins.n00-nvim-tree"),
     require("plugins.n00-nvim-tree").web_dev_icons,
@@ -19,4 +19,4 @@ table_insert(
     table.unpack(require("plugins.nvchad"))
 )
 
-require("lazy").setup(plugins)
+require("plugins.l00-lazy-nvim").setup(plugins)

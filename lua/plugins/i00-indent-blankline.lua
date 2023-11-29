@@ -7,8 +7,7 @@ local M = {
         require("core.utils").lazy_load("indent-blankline.nvim")
     end,
     opts = function()
-        -- TODO configs
-        return require("plugins.configs.others").blankline
+        return require("plugins.i01-indent-blankline-cfg")
     end,
     config = function(_, opts)
         require("core.utils").load_mappings("blankline")

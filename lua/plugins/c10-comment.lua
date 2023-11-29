@@ -13,7 +13,7 @@ local M = {
     end,
     config = function(_, opts)
         require("Comment").setup(opts)
-    end,
+    end
 }
 
 return M

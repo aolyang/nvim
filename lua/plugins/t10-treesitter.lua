@@ -8,8 +8,7 @@ local M = {
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     opts = function()
-        -- TODO: configs treesitter
-        return require("plugins.configs.treesitter")
+        return require("plugins.t11-treesitter-cfg")
     end,
     config = function(_, opts)
         dofile(vim.g.base46_cache .. "syntax")
