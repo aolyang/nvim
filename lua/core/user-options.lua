@@ -11,7 +11,7 @@ M.ui = {
     hl_override = {},
     changed_themes = {},
     theme = "gruvchad",
-    theme_toggle = { "gruvbox", "gruvchad" },
+    -- theme_toggle = { "gruvbox", "gruvchad" }, -- TODO NvChad ui need update, because of fixed chadrc.lua file path.
     transparency = false,
     lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
@@ -31,7 +31,7 @@ M.ui = {
 
     ------------------------------- nvchad_ui modules -----------------------------
     statusline = {
-        theme = "default", -- default/vscode/vscode_colored/minimal
+        theme = "vscode_colored", -- default/vscode/vscode_colored/minimal
         -- default/round/block/arrow separators work only for default statusline theme
         -- round and block will work for minimal theme only
         separator_style = "default",
@@ -40,15 +40,35 @@ M.ui = {
 
     -- lazyload it when there are 1+ buffers
     tabufline = {
-        show_numbers = false,
+        show_numbers = true,
         enabled = true,
         lazyload = true,
         overriden_modules = nil,
     },
 
+    nvimtree = {
+        filters = {
+            exclude = {
+                "*/.git"
+            },
+        },
+        git = {
+            enable = true,
+        },
+
+        renderer = {
+            highlight_git = true,
+            icons = {
+                show = {
+                    git = true,
+                },
+            },
+        },
+    },
+
     -- nvdash (dashboard)
     nvdash = {
-        load_on_startup = false,
+        load_on_startup = true,
 
         header = {
             "           ▄ ▄                   ",

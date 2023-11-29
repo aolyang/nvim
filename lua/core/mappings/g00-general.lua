@@ -1,5 +1,6 @@
 local M = {
     i = {
+        ["jk"] = { "<ESC>", "Escape insert mode" },
         -- go to  beginning and end
         ["<C-b>"] = { "<ESC>^i", "Beginning of line" },
         ["<C-e>"] = { "<End>", "End of line" },

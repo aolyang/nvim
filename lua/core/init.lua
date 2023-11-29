@@ -1,4 +1,4 @@
-require("core.pollyfill")
+require("core.utils.pollyfills")
 
 local g = vim.g
 g.mapleader = " "
