@@ -1,7 +1,7 @@
 local M = {}
 
 M.load_config = function()
-    return require("configs")
+    return require("core.user-options")
 end
 
 M.load_mappings = require("core.utils.load_mappings")
