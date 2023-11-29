@@ -9,6 +9,8 @@ some install:
 
 ## you should watch this
 
+https://stackoverflow.com/questions/3458689/how-to-move-screen-without-moving-cursor-in-vim
+
 + move in screen
 
 `Ctrl-y` Moves screen up one line  
@@ -20,6 +22,6 @@ some install:
 
 + move cursor line in  screen
 
-`zz` - move current line to the middle of the screen (warning: ZZ is save and exit, so watch out for caps lock)
-`zt` - move current line to the top of the screen
-`zb` - move current line to the bottom of the screen
+`zz` - move current line to the middle of the screen (warning: ZZ is save and exit, so watch out for caps lock)  
+`zt` - move current line to the top of the screen  
+`zb` - move current line to the bottom of the screen  
