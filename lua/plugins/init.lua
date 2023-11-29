@@ -16,7 +16,6 @@ local plugins = {
 
 local nvchad_plugins = require("plugins.nvchad")
 
-print("plugins is nil", nvchad_plugins == nil)
 table_insert(
     plugins,
     table.unpack(nvchad_plugins)
