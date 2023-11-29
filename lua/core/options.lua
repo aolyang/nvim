@@ -1,17 +1,6 @@
-local g = vim.g
 local opt = vim.opt
-local config = require("core.utils").load_config()
-
-g.mapleader = " "
-
--------------------------------------- globals -----------------------------------------
-g.nvchad_theme = config.ui.theme
-g.base46_cache = vim.fn.stdpath("data") .. "/nvchad/base46/"
-g.toggle_theme_icon = "   "
-g.transparency = config.ui.transparency
 
 -------------------------------------- vim options ------------------------------------------
-
 -- global statusline
 opt.laststatus = 3
 opt.showmode = false
