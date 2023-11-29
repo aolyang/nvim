@@ -2,32 +2,26 @@ local M = {}
 local fn = vim.fn
 local utils = require("core.utils")
 
+M.setup_lazy = function(install_path)
+    ------------- base46 ---------------
+    local lazy_path = fn.stdpath "data" .. "/lazy/base46"
 
-M.prepare_base46 = function()
-    local cache_path = fn.stdpath("data") .. "/lazy/base46"
+    utils.echo "  Compiling base46 theme to bytecode ..."
 
-    if not vim.loop.fs_stat(cache_path) then
-        utils.echo("  Compiling base46 theme to bytecode ...")
+    local base46_repo = "https://github.com/NvChad/base46"
+    utils.shell_call({ "git", "clone", "--depth", "1", "-b", "v2.0", base46_repo, lazy_path })
+    vim.opt.rtp:prepend(lazy_path)
 
-        local repo = "https://github.com/NvChad/base46"
-        utils.shell_call { "git", "clone", "--depth", "1", "-b", "v2.0", repo, cache_path }
+    require("base46").compile()
 
-        require("base46").compile()
-    end
-    vim.opt.rtp:prepend(cache_path)
-    dofile(vim.g.base46_cache .. "defaults")
-end
+    --------- lazy.nvim ---------------
+    utils.echo "  Installing lazy.nvim & plugins ..."
 
-M.setup_lazy = function()
-    local cache_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-    if not vim.loop.fs_stat(cache_path) then
-        utils.echo("  Installing lazy.nvim & plugins ...")
+    local repo = "https://github.com/folke/lazy.nvim.git"
+    utils.shell_call ({ "git", "clone", "--filter=blob:none", "--branch=stable", repo, install_path })
+    vim.opt.rtp:prepend(install_path)
 
-        local repo = "https://github.com/folke/lazy.nvim.git"
-        utils.shell_call({ "git", "clone", "--filter=blob:none", "--branch=stable", repo, cache_path })
-        M.setup_plugins()
-    end
-    vim.opt.rtp:prepend(cache_path)
+    M.setup_plugins()
 end
 
 M.setup_plugins = function()
