@@ -18,7 +18,6 @@ return function(section, mapping_opt)
                     mapping_info.opts, opts.mode = nil, nil
                     opts.desc = mapping_info[2]
 
-                    print("set mappings", keybind, mapping_info[1])
                     vim.keymap.set(mode, keybind, mapping_info[1], opts)
                 end
             end
