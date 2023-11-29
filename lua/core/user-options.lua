@@ -82,7 +82,6 @@ M.ui = {
         },
     },
 }
-M.plugins = ""
 
 M.mappings = require("core.mappings")
 
