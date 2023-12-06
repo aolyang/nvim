@@ -10,9 +10,9 @@ local plugins = {
     require("plugins.mason"),
     require("plugins.nvim-tree"),
     require("plugins.nvim-tree.web-dev-icons"),
-    require("plugins.t00-telescope"),
-    require("plugins.t10-treesitter"),
-    require("plugins.w00-which-key")
+    require("plugins.telescope"),
+    require("plugins.treesitter"),
+    require("plugins.which-key")
 }
 
 local nvchad_plugins = require("plugins.nvchad")
