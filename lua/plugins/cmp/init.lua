@@ -1,4 +1,3 @@
-
 local M = {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -9,7 +8,7 @@ local M = {
             dependencies = "rafamadriz/friendly-snippets",
             opts = { history = true, updateevents = "TextChanged,TextChangedI" },
             config = function(_, opts)
-                require("plugins.c02-cmp-deps-cfg").luasnip(opts)
+                require("plugins.cmp.config-deps").luasnip(opts)
             end,
         },
 
@@ -39,7 +38,7 @@ local M = {
         },
     },
     opts = function()
-        return require("plugins.c01-cmp-cfg")
+        return require("lua.plugins.cmp.config")
     end,
     config = function(_, opts)
         require("cmp").setup(opts)
