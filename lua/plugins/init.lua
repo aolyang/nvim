@@ -6,7 +6,7 @@ local plugins = {
     require("plugins.comment"),
     require("plugins.gitsigns"),
     require("plugins.blankline"),
-    require("plugins.l10-lsp"),
+    require("plugins.lsp"),
     require("plugins.m00-mason"),
     require("plugins.n00-nvim-tree"),
     require("plugins.n00-nvim-tree").web_dev_icons,
