@@ -7,9 +7,9 @@ local plugins = {
     require("plugins.gitsigns"),
     require("plugins.blankline"),
     require("plugins.lsp"),
-    require("plugins.m00-mason"),
-    require("plugins.n00-nvim-tree"),
-    require("plugins.n00-nvim-tree").web_dev_icons,
+    require("plugins.mason"),
+    require("plugins.nvim-tree"),
+    require("plugins.nvim-tree.web-dev-icons"),
     require("plugins.t00-telescope"),
     require("plugins.t10-treesitter"),
     require("plugins.w00-which-key")
