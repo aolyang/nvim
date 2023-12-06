@@ -22,4 +22,4 @@ table_insert(
     table.unpack(nvchad_plugins)
 )
 
-require("plugins.l00-lazy-nvim").setup(plugins)
+require("lua.plugins.lazy-nvim").setup(plugins)
