@@ -4,6 +4,7 @@ local plugins = {
     "nvim-lua/plenary.nvim",
     require("plugins.cmp"),
     require("plugins.comment"),
+    require("plugins.flash"),
     require("plugins.gitsigns"),
     require("plugins.indent-blankline"),
     require("plugins.lsp"),
