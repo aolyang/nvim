@@ -2,7 +2,7 @@ local M = {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
     opts = function()
-        return require("plugins.m01-mason-cfg")
+        return require("plugins.mason.config")
     end,
     config = function(_, opts)
         dofile(vim.g.base46_cache .. "mason")
