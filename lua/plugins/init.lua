@@ -5,7 +5,7 @@ local plugins = {
     require("plugins.cmp"),
     require("plugins.comment"),
     require("plugins.gitsigns"),
-    require("plugins.blankline"),
+    require("plugins.indent-blankline"),
     require("plugins.lsp"),
     require("plugins.mason"),
     require("plugins.nvim-tree"),
