@@ -38,7 +38,7 @@ local M = {
         },
     },
     opts = function()
-        return require("lua.plugins.cmp.config")
+        return require("plugins.cmp.config")
     end,
     config = function(_, opts)
         require("cmp").setup(opts)
