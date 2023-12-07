@@ -4,7 +4,8 @@ local M = {
         require("core.utils").lazy_load("nvim-lspconfig")
     end,
     config = function()
-        require("plugins.lsp.config")
+        require("plugins.lsp.setup")
+        require("plugins.lsp.lua_ls.setup")
     end,
 }
 
