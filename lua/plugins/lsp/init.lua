@@ -18,8 +18,9 @@ local M = {
             "angularls",
             "tailwindcss",
 
-            -- rust
-            "rust_analyzer"
+            -- rust & c/c++
+            "rust_analyzer",
+            "clangd",
         }
         for _, lsp in ipairs(languages) do
             require("lspconfig")[lsp].setup({
