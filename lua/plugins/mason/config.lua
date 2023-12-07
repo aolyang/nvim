@@ -9,8 +9,12 @@ local options = {
         "css-lsp",
         "html-lsp",
         "typescript-language-server",
-        "prettier"
-    }, -- not an option from mason.nvim
+        "angular-language-server",
+        "prettier",
+
+        -- rust
+        "rust-analyzer"
+    },
 
     PATH = "skip",
 

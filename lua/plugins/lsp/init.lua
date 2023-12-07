@@ -12,8 +12,14 @@ local M = {
         -- remmember mason ensure installed
         local languages = {
             -- frontend
+            "html",
+            "cssls",
             "tsserver",
+            "angularls",
             "tailwindcss",
+
+            -- rust
+            "rust_analyzer"
         }
         for _, lsp in ipairs(languages) do
             require("lspconfig")[lsp].setup({
