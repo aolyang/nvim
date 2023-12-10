@@ -48,7 +48,7 @@ local M = {
 
         ["<leader>ra"] = {
             function()
-                require("nvchad.renamer").open()
+                require("plugins.utils.renamer").open()
             end,
             "LSP rename",
         },
