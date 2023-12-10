@@ -10,7 +10,7 @@ local plugins = {
     require("plugins.lsp"),
     require("plugins.mason"),
     require("plugins.nvim-tree"),
-    require("plugins.nvim-tree.web-dev-icons"),
+    require("plugins.icons"),
     require("plugins.telescope"),
     require("plugins.treesitter"),
     require("plugins.which-key")
