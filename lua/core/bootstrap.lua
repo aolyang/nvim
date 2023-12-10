@@ -28,7 +28,7 @@ M.setup_plugins = function()
     -- install plugins
     require("plugins")
     -- mason packages & show post_bootstrap screen
-    require("nvchad.post_install")()
+    require("core.utils.postinstall")()
 end
 
 return M
