@@ -1,5 +1,7 @@
 # Nvim config
 
+some of code in this repo of nvim config come from `NvChad`, to improve more cutomization.
+
 ## folder structure
 
 ```
