@@ -5,14 +5,14 @@ local M = {
         -- cycle through buffers
         ["<tab>"] = {
             function()
-                require("nvchad.tabufline").tabuflineNext()
+                require("plugins.tabufline.utils").tabuflineNext()
             end,
             "Goto next buffer",
         },
 
         ["<S-tab>"] = {
             function()
-                require("nvchad.tabufline").tabuflinePrev()
+                require("plugins.tabufline.utils").tabuflinePrev()
             end,
             "Goto prev buffer",
         },
@@ -20,7 +20,7 @@ local M = {
         -- close buffer + hide terminal buffer
         ["<leader>x"] = {
             function()
-                require("nvchad.tabufline").close_buffer()
+                require("plugins.tabufline.utils").close_buffer()
             end,
             "Close buffer",
         },

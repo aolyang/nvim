@@ -16,11 +16,12 @@ local plugins = {
     require("plugins.which-key")
 }
 
-local nvchad_plugins = require("plugins.nvchad")
+-- local nvchad_plugins = require("plugins.nvchad")
 
-table_insert(
-    plugins,
-    table.unpack(nvchad_plugins)
-)
+-- table_insert(
+--     plugins,
+--     table.unpack(nvchad_plugins)
+-- )
+require("plugins.tabufline").lazy_load()
 
 require("plugins.lazy-nvim").setup(plugins)
