@@ -50,3 +50,10 @@ new_cmd("NvCheatsheet", function()
 end, {})
 
 vim.opt.statusline = "%!v:lua.require('plugins.statusline." .. config.statusline.theme .. "').run()"
+-- redraw statusline on LspProgressUpdate event & fixes NvChad #145
+vim.api.nvim_create_autocmd("User", {
+    pattern = "LspProgressUpdate",
+    callback = function()
+        vim.cmd "redrawstatus"
+    end,
+})
