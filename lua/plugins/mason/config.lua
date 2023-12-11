@@ -7,6 +7,7 @@ local options = {
 
         -- web dev stuff
         "css-lsp",
+        "tailwindcss-language-server",
         "html-lsp",
         "typescript-language-server",
         "angular-language-server",
