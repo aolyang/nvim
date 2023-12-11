@@ -43,8 +43,10 @@ end, {})
 -- command to toggle cheatsheet
 new_cmd("NvCheatsheet", function()
     if vim.g.nvcheatsheet_displayed then
-      require("plugins.tabufline.utils").close_buffer()
+        require("plugins.tabufline.utils").close_buffer()
     else
-      require("plugins.cheatsheet." .. config.cheatsheet.theme)()
+        require("plugins.cheatsheet." .. config.cheatsheet.theme)()
     end
-  end, {})
+end, {})
+
+vim.opt.statusline = "%!v:lua.require('plugins.statusline." .. config.statusline.theme .. "').run()"
