@@ -5,21 +5,21 @@ local M = {
         -- toggle in terminal mode
         ["<A-i>"] = {
             function()
-                require("nvterm.terminal").toggle "float"
+                require("plugins.nvterm-p.terminal").toggle "float"
             end,
             "Toggle floating term",
         },
 
         ["<A-h>"] = {
             function()
-                require("nvterm.terminal").toggle "horizontal"
+                require("plugins.nvterm-p.terminal").toggle "horizontal"
             end,
             "Toggle horizontal term",
         },
 
         ["<A-v>"] = {
             function()
-                require("nvterm.terminal").toggle "vertical"
+                require("plugins.nvterm-p.terminal").toggle "vertical"
             end,
             "Toggle vertical term",
         },
@@ -29,21 +29,21 @@ local M = {
         -- toggle in normal mode
         ["<A-i>"] = {
             function()
-                require("nvterm.terminal").toggle "float"
+                require("plugins.nvterm-p.terminal").toggle "float"
             end,
             "Toggle floating term",
         },
 
         ["<A-h>"] = {
             function()
-                require("nvterm.terminal").toggle "horizontal"
+                require("plugins.nvterm-p.terminal").toggle "horizontal"
             end,
             "Toggle horizontal term",
         },
 
         ["<A-v>"] = {
             function()
-                require("nvterm.terminal").toggle "vertical"
+                require("plugins.nvterm-p.terminal").toggle "vertical"
             end,
             "Toggle vertical term",
         },
@@ -51,14 +51,14 @@ local M = {
         -- new
         ["<leader>h"] = {
             function()
-                require("nvterm.terminal").new "horizontal"
+                require("plugins.nvterm-p.terminal").new "horizontal"
             end,
             "New horizontal term",
         },
 
         ["<leader>v"] = {
             function()
-                require("nvterm.terminal").new "vertical"
+                require("plugins.nvterm-p.terminal").new "vertical"
             end,
             "New vertical term",
         },

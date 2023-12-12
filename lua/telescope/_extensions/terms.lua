@@ -57,7 +57,7 @@ local function term_picker()
 
                 -- open term only if its window isnt opened
                 if not vim.tbl_contains(api.nvim_list_wins(), vim.fn.bufwinid(entry.bufnr)) then
-                    require("nvterm.terminal").get_and_show("buf", entry.bufnr)
+                    require("plugins.nvterm-p.terminal").get_and_show("buf", entry.bufnr)
                 end
             end)
             return true
