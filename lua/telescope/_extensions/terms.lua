@@ -37,7 +37,7 @@ local function term_picker()
     end
 
     local opts = {}
-    local max_bufnr = math.max(unpack(get_bufnrs()))
+    local max_bufnr = math.max(table.unpack(get_bufnrs()))
     opts.bufnr_width = #tostring(max_bufnr)
 
     -- our picker function: colors

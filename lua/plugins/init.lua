@@ -2,7 +2,7 @@ local table_insert = require("core.utils.table_insert")
 
 local plugins = {
     "nvim-lua/plenary.nvim",
-    require("plugins.cmp"),
+    require("plugins.cmp-p"),
     require("plugins.comment"),
     require("plugins.flash"),
     require("plugins.gitsigns"),
@@ -11,7 +11,7 @@ local plugins = {
     require("plugins.mason"),
     require("plugins.nvim-tree"),
     require("plugins.icons"),
-    require("plugins.telescope"),
+    require("plugins.telescope-p"),
     require("plugins.treesitter"),
     require("plugins.which-key")
 }

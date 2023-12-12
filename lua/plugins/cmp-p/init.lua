@@ -8,7 +8,7 @@ local M = {
             dependencies = "rafamadriz/friendly-snippets",
             opts = { history = true, updateevents = "TextChanged,TextChangedI" },
             config = function(_, opts)
-                require("plugins.cmp.config-deps").luasnip(opts)
+                require("plugins.cmp-p.config-deps").luasnip(opts)
             end,
         },
 
@@ -38,7 +38,7 @@ local M = {
         },
     },
     opts = function()
-        return require("plugins.cmp.config")
+        return require("plugins.cmp-p.config")
     end,
     config = function(_, opts)
         require("cmp").setup(opts)

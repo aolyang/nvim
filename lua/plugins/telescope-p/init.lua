@@ -12,7 +12,7 @@ local M = {
         require("core.utils").load_mappings("telescope")
     end,
     opts = function()
-        return require("lua.plugins.telescope.config")
+        return require("plugins.telescope-p.config")
     end,
     config = function(_, opts)
         dofile(vim.g.base46_cache .. "telescope")
