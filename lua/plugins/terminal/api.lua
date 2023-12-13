@@ -1,6 +1,6 @@
-local util = require("plugins.terminal.utils")
+local util = require("plugins.terminal.util")
 local a = vim.api
-local term = {}
+local terminal = {}
 local terminals = {}
 
 local function get_last(list)
@@ -53,9 +53,9 @@ local ensure_and_send = function(cmd, type)
     terminals = util.verify_terminals(terminals)
     local function select_term()
         if not type then
-            return get_last_still_open() or term.new "horizontal"
+            return get_last_still_open() or terminal.new "horizontal"
         else
-            return get_type_last(type) or term.new(type)
+            return get_type_last(type) or terminal.new(type)
         end
     end
     local term = select_term()
@@ -66,53 +66,53 @@ local call_and_restore = function(fn, opts)
     local current_win = a.nvim_get_current_win()
     local mode = a.nvim_get_mode().mode == "i" and "startinsert" or "stopinsert"
 
-    fn(table.unpack(opts))
+    fn(unpack(opts))
     a.nvim_set_current_win(current_win)
 
     vim.cmd(mode)
 end
 
-term.send = function(cmd, type)
+terminal.send = function(cmd, type)
     if not cmd then
         return
     end
     call_and_restore(ensure_and_send, { cmd, type })
 end
 
-term.hide_term = function(term)
+terminal.hide_term = function(term)
     terminals.list[term.id].open = false
     a.nvim_win_close(term.win, false)
 end
 
-term.show_term = function(term)
+terminal.show_term = function(term)
     term.win = create_term_window(term.type)
     a.nvim_win_set_buf(term.win, term.buf)
     terminals.list[term.id].open = true
     vim.cmd "startinsert"
 end
 
-term.get_and_show = function(key, value)
+terminal.get_and_show = function(key, value)
     local term = get_term(key, value)
-    term.show_term(term)
+    terminal.show_term(term)
 end
 
-term.get_and_hide = function(key, value)
+terminal.get_and_hide = function(key, value)
     local term = get_term(key, value)
-    term.hide_term(term)
+    terminal.hide_term(term)
 end
 
-term.hide = function(type)
+terminal.hide = function(type)
     local term = type and get_type_last(type) or get_last()
-    term.hide_term(term)
+    terminal.hide_term(term)
 end
 
-term.show = function(type)
+terminal.show = function(type)
     terminals = util.verify_terminals(terminals)
     local term = type and get_type_last(type) or terminals.last
-    term.show_term(term)
+    terminal.show_term(term)
 end
 
-term.new = function(type, shell_override)
+terminal.new = function(type, shell_override)
     local win = create_term_window(type)
     local buf = a.nvim_create_buf(false, true)
     a.nvim_buf_set_option(buf, "filetype", "terminal")
@@ -127,39 +127,39 @@ term.new = function(type, shell_override)
     return term
 end
 
-term.toggle = function(type)
+terminal.toggle = function(type)
     terminals = util.verify_terminals(terminals)
-    local _term = get_type_last(type)
+    local term = get_type_last(type)
 
-    if not _term then
-        _term = term.new(type)
-    elseif _term.open then
-        term.hide_term(_term)
+    if not term then
+        term = terminal.new(type)
+    elseif term.open then
+        terminal.hide_term(term)
     else
-        term.show_term(_term)
+        terminal.show_term(term)
     end
 end
 
-term.toggle_all_terms = function()
+terminal.toggle_all_terms = function()
     terminals = util.verify_terminals(terminals)
 
     for _, term in ipairs(terminals.list) do
         if term.open then
-            term.hide_term(term)
+            terminal.hide_term(term)
         else
-            term.show_term(term)
+            terminal.show_term(term)
         end
     end
 end
 
 
-term.close_all_terms = function()
-    for _, buf in ipairs(term.list_active_terms "buf") do
+terminal.close_all_terms = function()
+    for _, buf in ipairs(terminal.list_active_terms "buf") do
         vim.cmd("bd! " .. tostring(buf))
     end
 end
 
-term.list_active_terms = function(property)
+terminal.list_active_terms = function(property)
     local terms = get_still_open()
     if property then
         return vim.tbl_map(function(t)
@@ -169,12 +169,12 @@ term.list_active_terms = function(property)
     return terms
 end
 
-term.list_terms = function()
+terminal.list_terms = function()
     return terminals.list
 end
 
-term.init = function(term_config)
+terminal.init = function(term_config)
     terminals = term_config
 end
 
-return term
+return terminal
