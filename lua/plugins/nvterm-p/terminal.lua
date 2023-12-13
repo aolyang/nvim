@@ -1,4 +1,4 @@
-local util = require("plugins.nvterm.utils")
+local util = require("plugins.nvterm-p.utils")
 local a = vim.api
 local nvterm = {}
 local terminals = {}
