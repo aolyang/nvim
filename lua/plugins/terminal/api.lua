@@ -66,7 +66,7 @@ local call_and_restore = function(fn, opts)
     local current_win = a.nvim_get_current_win()
     local mode = a.nvim_get_mode().mode == "i" and "startinsert" or "stopinsert"
 
-    fn(unpack(opts))
+    fn(table.unpack(opts))
     a.nvim_set_current_win(current_win)
 
     vim.cmd(mode)
