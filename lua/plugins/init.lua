@@ -10,7 +10,6 @@ local plugins = {
     require("plugins.lsp"),
     require("plugins.mason"),
     require("plugins.nvim-tree"),
-    require("plugins.nvterm-p"),
     require("plugins.icons"),
     require("plugins.telescope-p"),
     require("plugins.treesitter"),
@@ -27,10 +26,12 @@ table_insert(
 require("plugins.nvdash").lazy_load()
 require("plugins.tabufline").lazy_load()
 
+local config = require("core.utils").load_config().ui
+
+require("plugins.terminal").setup(config.terminal)
 require("plugins.lazy-nvim").setup(plugins)
 
 local new_cmd = vim.api.nvim_create_user_command
-local config = require("core.utils").load_config().ui
 
 -- cmds
 new_cmd("Nvdash", function()

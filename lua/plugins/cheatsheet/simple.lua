@@ -185,6 +185,6 @@ return function()
   vim.opt_local.cul = false
 
   vim.keymap.set("n", "<ESC>", function()
-    require("nvchad.tabufline").close_buffer(buf)
+    require("plugins.tabufline.utils").close_buffer(buf)
   end, { buffer = buf }) -- use ESC to close
 end

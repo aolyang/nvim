@@ -1,19 +1,21 @@
 
 local M = {
     setup = function(config)
-        local defaults = require("plugins.nvterm-p.defaults")
+        require("core.utils").load_mappings("terminal")
+
+        local defaults = require("plugins.terminal.config")
         
         config = config and vim.tbl_deep_extend("force", defaults, config) or defaults
 
         local behavior = config.behavior
         if behavior.autoclose_on_quit.enabled then
             local function force_exit()
-                require("plugins.nvterm-p.terminal").close_all_terms()
+                require("plugins.terminal.api").close_all_terms()
                 vim.api.nvim_command "qa"
             end
             vim.api.nvim_create_autocmd({ "WinClosed" }, {
                 callback = vim.schedule_wrap(function()
-                    local open_terms = require("plugins.nvterm-p.terminal").list_active_terms "win"
+                    local open_terms = require("plugins.terminal.api").list_active_terms "win"
 
                     local non_terms = vim.tbl_filter(function(win)
                         return not vim.tbl_contains(open_terms, win)
@@ -59,7 +61,7 @@ local M = {
                 pattern = "term://*",
             })
         end
-        require("plugins.nvterm-p.terminal").init(config.terminals)
+        require("plugins.terminal.api").init(config.terminals)
     end
 }
 return M

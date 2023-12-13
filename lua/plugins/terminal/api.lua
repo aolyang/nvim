@@ -1,6 +1,6 @@
-local util = require("plugins.nvterm-p.utils")
+local util = require("plugins.terminal.utils")
 local a = vim.api
-local nvterm = {}
+local term = {}
 local terminals = {}
 
 local function get_last(list)
@@ -53,9 +53,9 @@ local ensure_and_send = function(cmd, type)
     terminals = util.verify_terminals(terminals)
     local function select_term()
         if not type then
-            return get_last_still_open() or nvterm.new "horizontal"
+            return get_last_still_open() or term.new "horizontal"
         else
-            return get_type_last(type) or nvterm.new(type)
+            return get_type_last(type) or term.new(type)
         end
     end
     local term = select_term()
@@ -72,47 +72,47 @@ local call_and_restore = function(fn, opts)
     vim.cmd(mode)
 end
 
-nvterm.send = function(cmd, type)
+term.send = function(cmd, type)
     if not cmd then
         return
     end
     call_and_restore(ensure_and_send, { cmd, type })
 end
 
-nvterm.hide_term = function(term)
+term.hide_term = function(term)
     terminals.list[term.id].open = false
     a.nvim_win_close(term.win, false)
 end
 
-nvterm.show_term = function(term)
+term.show_term = function(term)
     term.win = create_term_window(term.type)
     a.nvim_win_set_buf(term.win, term.buf)
     terminals.list[term.id].open = true
     vim.cmd "startinsert"
 end
 
-nvterm.get_and_show = function(key, value)
+term.get_and_show = function(key, value)
     local term = get_term(key, value)
-    nvterm.show_term(term)
+    term.show_term(term)
 end
 
-nvterm.get_and_hide = function(key, value)
+term.get_and_hide = function(key, value)
     local term = get_term(key, value)
-    nvterm.hide_term(term)
+    term.hide_term(term)
 end
 
-nvterm.hide = function(type)
+term.hide = function(type)
     local term = type and get_type_last(type) or get_last()
-    nvterm.hide_term(term)
+    term.hide_term(term)
 end
 
-nvterm.show = function(type)
+term.show = function(type)
     terminals = util.verify_terminals(terminals)
     local term = type and get_type_last(type) or terminals.last
-    nvterm.show_term(term)
+    term.show_term(term)
 end
 
-nvterm.new = function(type, shell_override)
+term.new = function(type, shell_override)
     local win = create_term_window(type)
     local buf = a.nvim_create_buf(false, true)
     a.nvim_buf_set_option(buf, "filetype", "terminal")
@@ -127,39 +127,39 @@ nvterm.new = function(type, shell_override)
     return term
 end
 
-nvterm.toggle = function(type)
+term.toggle = function(type)
     terminals = util.verify_terminals(terminals)
-    local term = get_type_last(type)
+    local _term = get_type_last(type)
 
-    if not term then
-        term = nvterm.new(type)
-    elseif term.open then
-        nvterm.hide_term(term)
+    if not _term then
+        _term = term.new(type)
+    elseif _term.open then
+        term.hide_term(_term)
     else
-        nvterm.show_term(term)
+        term.show_term(_term)
     end
 end
 
-nvterm.toggle_all_terms = function()
+term.toggle_all_terms = function()
     terminals = util.verify_terminals(terminals)
 
     for _, term in ipairs(terminals.list) do
         if term.open then
-            nvterm.hide_term(term)
+            term.hide_term(term)
         else
-            nvterm.show_term(term)
+            term.show_term(term)
         end
     end
 end
 
 
-nvterm.close_all_terms = function()
-    for _, buf in ipairs(nvterm.list_active_terms "buf") do
+term.close_all_terms = function()
+    for _, buf in ipairs(term.list_active_terms "buf") do
         vim.cmd("bd! " .. tostring(buf))
     end
 end
 
-nvterm.list_active_terms = function(property)
+term.list_active_terms = function(property)
     local terms = get_still_open()
     if property then
         return vim.tbl_map(function(t)
@@ -169,12 +169,12 @@ nvterm.list_active_terms = function(property)
     return terms
 end
 
-nvterm.list_terms = function()
+term.list_terms = function()
     return terminals.list
 end
 
-nvterm.init = function(term_config)
+term.init = function(term_config)
     terminals = term_config
 end
 
-return nvterm
+return term
