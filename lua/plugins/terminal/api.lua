@@ -1,4 +1,4 @@
-local util = require("plugins.terminal.util")
+local util = require("plugins.terminal.utils")
 local a = vim.api
 local terminal = {}
 local terminals = {}
