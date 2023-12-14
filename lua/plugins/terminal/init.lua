@@ -4,7 +4,6 @@ local M = {
         require("core.utils").load_mappings("terminal")
 
         local defaults = require("plugins.terminal.config")
-        
         config = config and vim.tbl_deep_extend("force", defaults, config) or defaults
 
         local behavior = config.behavior

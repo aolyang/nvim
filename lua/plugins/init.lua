@@ -1,16 +1,19 @@
 local table_insert = require("core.utils.table_insert")
 
 local plugins = {
+    "github/copilot.vim",
     "nvim-lua/plenary.nvim",
     require("plugins.cmp-p"),
     require("plugins.comment"),
+    require("plugins.copilot-cmp-p"),
+    require("plugins.copilot-p"),
     require("plugins.flash"),
     require("plugins.gitsigns-p"),
+    require("plugins.icons"),
     require("plugins.indent-blankline"),
     require("plugins.lsp"),
     require("plugins.mason"),
     require("plugins.nvim-tree"),
-    require("plugins.icons"),
     require("plugins.telescope-p"),
     require("plugins.treesitter"),
     require("plugins.which-key")
