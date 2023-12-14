@@ -14,6 +14,10 @@ M.load_config = function()
     return require("core.user-options")
 end
 
+M.is_windows = function ()
+    return vim.loop.os_uname().sysname == "Windows_NT"
+end
+
 M.load_mappings = require("core.utils.load_mappings")
 
 M.lazy_load = require("core.utils.lazy_load")

@@ -97,6 +97,8 @@ M.ui = {
             silent = true, -- silences 'no signature help available' message from appearing
         },
     },
+    terminal = {
+    }
 }
 
 M.mappings = require("core.mappings")

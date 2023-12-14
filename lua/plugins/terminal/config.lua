@@ -1,5 +1,6 @@
 local defaults = {
     terminals = {
+        -- shell = "pwsh",
         list = {},
         type_opts = {
             float = {
