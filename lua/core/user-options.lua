@@ -1,9 +1,5 @@
 local M = {}
 
-M.options = {
-    nvchad_branch = "v2.0",
-}
-
 M.ui = {
     ------------------------------- base46 -------------------------------------
     -- hl = highlights
@@ -67,7 +63,7 @@ M.ui = {
 
     -- nvdash (dashboard)
     nvdash = {
-        load_on_startup = true,
+        load_on_startup = false,
 
         header = {
             " ███╗   ██╗ ██╗   ██╗ ██╗ ███╗   ███╗",

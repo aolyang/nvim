@@ -3,8 +3,8 @@ local config = require("core.utils").load_config().ui.lsp.signature
 -- thx to https://gitlab.com/ranjithshegde/dotbare/-/blob/master/.config/nvim/lua/lsp/init.lua
 local M = {}
 
-M.signature_window = function(_, result, ctx, config)
-    local bufnr, winner = vim.lsp.handlers.signature_help(_, result, ctx, config)
+M.signature_window = function(_, result, ctx, options)
+    local bufnr, winner = vim.lsp.handlers.signature_help(_, result, ctx, options)
     local current_cursor_line = vim.api.nvim_win_get_cursor(0)[1]
 
     if winner then
