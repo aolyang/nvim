@@ -2,6 +2,7 @@ local M = {
     "nvim-telescope/telescope.nvim",
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
+        "sharkdp/fd",
         {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "make"
