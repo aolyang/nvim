@@ -7,7 +7,7 @@ local M = {
         local LspM = require("plugins.lsp.module")
 
         require("plugins.lsp.setup")
-        require("plugins.lsp.setup-lua")
+        require("plugins.lsp.lua").setup()
 
         -- remmember mason ensure installed
         local languages = {
