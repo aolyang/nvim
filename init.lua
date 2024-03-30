@@ -1,15 +1,18 @@
-require("core")
-
-require("core.utils").load_mappings()
-
+local utils = require("utils")
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
--- bootstrap lazy.nvim!
 if not vim.loop.fs_stat(lazypath) then
-  require("core.bootstrap").setup_lazy(lazypath)
-end
+    utils.echo "  Installing lazy.nvim & plugins ..."
 
-dofile(vim.g.base46_cache .. "defaults")
+    utils.shell({
+        "git", "clone", "https://github.com/folke/lazy.nvim.git",
+        "--filter=blob:none",
+        "--branch=stable",
+        lazypath
+    })
+end
 vim.opt.rtp:prepend(lazypath)
 
-require("plugins")
+require("lazy").setup({
+    require("plugins.astronvim"),
+    require("plugins.astro-communities")
+}, require("lazy-nvim").options)
